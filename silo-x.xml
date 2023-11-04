@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<story title="" author="JR" startPoint="Nom planète partie 1" length="100">
+  <node id="Nom planète partie 1" textContent="Ve#Lu#Li#Ir#Ar#Tr#Ha" memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Nom planète partie 2" unique="false" variable="" />
+  <node id="Nom planète partie 2" textContent="zi#ra" memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Nom planète partie 3" unique="false" variable="" />
+  <node id="Nom planète partie 3" textContent="bor#tan#t#kis#kan#z" memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Intro planète" unique="false" variable="" />
+  <node id="Commandant tourelle" textContent="Commandant tourelle." memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Avancer tank" unique="false" variable="" />
+  <node id="Evènement" textContent="Evènement." memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Nommer tank" unique="false" variable="" />
+  <node id="Médaille 1" textContent="Médaille 1." memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Repos" unique="false" variable="" />
+  <node id="Médailles" textContent="Médailles." memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Repos" unique="false" variable="" />
+  <node id="Paysage" textContent="Paysage." memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Météo,Commandant tourelle" unique="false" variable="" />
+  <node id="Avancer tank" textContent="Avancer tank." memoryAdd="DISTANCE*1" memoryRemove="" memoryCondition="" nextNodes="Retour base tank,Avancer tank encore" unique="false" variable="" />
+  <node id="Météo" textContent="Météo." memoryAdd="METEO*1" memoryRemove="" memoryCondition="METEO=0" nextNodes="Commandant tourelle" unique="false" variable="" />
+  <node id="Départ tank" textContent="Départ tank." memoryAdd="DISTANCE=0,METEO=0,RETOUR=0" memoryRemove="" memoryCondition="" nextNodes="Nommer tank" unique="false" variable="" />
+  <node id="Retour base tank" textContent="Retour base tank." memoryAdd="" memoryRemove="" memoryCondition="RETOUR&gt;0" nextNodes="Récompense,Fin&#x9;" unique="false" variable="" />
+  <node id="Avancer tank encore" textContent="Avancer tank encore." memoryAdd="" memoryRemove="" memoryCondition="RETOUR=0" nextNodes="Distance tank proche arrivée,Distance tank" unique="false" variable="" />
+  <node id="Distance tank" textContent="Distance tank DISTANCE." memoryAdd="" memoryRemove="" memoryCondition="DISTANCE&lt;10" nextNodes="Evènement" unique="false" variable="DISTANCE" />
+  <node id="Distance tank proche arrivée" textContent="Distance tank proche arrivée." memoryAdd="" memoryRemove="" memoryCondition="DISTANCE=10" nextNodes="Objectif atteint" unique="false" variable="" />
+  <node id="Rat sortie tank" textContent="Rat sortie tank." memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Rat déplacement" unique="false" variable="" />
+  <node id="Réparation" textContent="Réparation." memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Rat sortie tank" unique="false" variable="" />
+  <node id="Objectif atteint" textContent="Objectif atteint." memoryAdd="RETOUR*1" memoryRemove="" memoryCondition="" nextNodes="Nommer tank" unique="false" variable="" />
+  <node id="Fin&#x9;" textContent="Fin." memoryAdd="" memoryRemove="" memoryCondition="NB_MISSIONS&gt;99" nextNodes="" unique="false" variable="" />
+  <node id="Repos" textContent="Repos." memoryAdd="NB_MISSIONS*1" memoryRemove="" memoryCondition="" nextNodes="Réparation,Rat sortie tank" unique="false" variable="" />
+  <node id="Récompense" textContent="Récompense." memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Médaille 1,Médailles,Repos" unique="false" variable="" />
+  <node id="Intro planète" textContent=" était une planète dévastée par les conflits nucléaires. La surface de la planète était devenue en grande partie un désert de glace. Des cratères immenses issus de longues guerres avaient remodelé le paysage. Les parties les plus basses des cratères formaient parfois des lacs d’ammoniac. " memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Intro Silo" unique="false" variable="" />
+  <node id="Intro Silo suite 1" textContent="comptait parmi les plus grands jamais construits. Il hébergeait une population de POPULATION personnes. Le niveau 0 du silo possédait en plus d'un accès vers l'extérieur, des capteurs et des antennes. Le niveau 1 était constitué d'immenses zones de stockage. Le niveau 2 abritait des ateliers pour la réparation de toutes sortes d'engins. Le niveau 3 était particulièrement sécurisé pour accueillir le centre de commande du silo. Les autres niveaux hébergeaient des infirmeries, des habitats, des centres de culture agricole, et parmis les niveaux les plus inférieurs, une centrale nucléaire miniaturisée." memoryAdd="POPULATION=30000" memoryRemove="" memoryCondition="" nextNodes="Rat" unique="false" variable="POPULATION" />
+  <node id="Nom silo partie 1" textContent=" 1#2#3#4#5#6#7#8#9" memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Nom silo partie 2" unique="false" variable="" />
+  <node id="Nom silo partie 2" textContent="0#1#2#3#4#5#6#7#8#9" memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Nom silo partie 3" unique="false" variable="" />
+  <node id="Nom silo partie 3" textContent="0#1#2#3#4#5#6#7#8#9 " memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Intro Silo suite 1" unique="false" variable="" />
+  <node id="Intro Silo" textContent="Pendant la 3ème guerre mondiale, des silos de différentes tailles avaient été construits un peu partout sur la surface de la planète. Ils étaient en général de forme cylindrique et composés de nombreux niveaux souterrains. Ces silos permettaient aux survivants des guerre de poursuivre une vie quasi normale. Le silo " memoryAdd="NB_MISSIONS=0" memoryRemove="" memoryCondition="" nextNodes="Nom silo partie 1" unique="false" variable="" />
+  <node id="Rat déplacement" textContent="Le rat se faufila le long d'un tuyau. #Le rat se faufila discrètement dans les recoins de la pièce. #Le rat longea discrètement un mur. #Le rat se déplaçait rapidement sans se faire remarquer. #Le rat se déplaçait généralement dans les zones d'ombre. #Le rat grimpa le long d'une caisse pour rejoindre une conduite d'aération. #Le rat se faufila le long de cables électriques. #Le rat longea des canalisations. " memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Rat hangar" unique="false" variable="" />
+  <node id="Rat hangar" textContent="Le rat atteignit le niveau 1 du silo, où d'immenses machines d'acier étaient entreposées. Il grimpa le long d'un tank et s'engouffra par l'écoutille restée ouverte. " memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Hangar,Intro tank" unique="false" variable="" />
+  <node id="Nommer tank" textContent="Le tank #Le tank géant #Le monstre d'acier #Le monstre de métal #L'immense tank #Le géant d'acier #L'énorme tank #L'énorme tank #L'engin de mort #La machine de guerre #La machine aux immenses chenilles  " memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Paysage" unique="false" variable="" />
+  <node id="Hangar" textContent="Dans le hangar, le commandant de tank comptemplait sa machine de guerre. Il monta à bord avec son équipage de EQUIPAGE hommes. Installé à son poste de commandement, il eximina la destination à atteindre. Peu de temps après, les chenilles se mirent en mouvement et le monstre d'acier sortit de sa tanière. " memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Départ tank" unique="false" variable="EQUIPAGE" />
+  <node id="Rat" textContent="Un autre habitant des lieux se déplaçait encore plus aisément dans les différents étages du silo. Il était discret et agile, c'était un rat gris. " memoryAdd="" memoryRemove="" memoryCondition="" nextNodes="Rat déplacement" unique="false" variable="" />
+  <node id="Intro tank" textContent="Dans le hangar, un commandant de tank comptemplait sa machine de guerre. Ces engins étaient forgés pour résister au chaos des guerres nucléaires. Le monstre d'acier possédait une gigantesque tourelle et d'autres plus petites. le moteur en veille s'appretait à se réveiller. Il monta dans l'engin avec un équipage de EQUIPAGE hommes. Une fois installé dans le poste de contrôle, le commandant alluma un écran qui affichait la destination donnée par le centre de commande du silo. Le tank entra dans l'énorme sas du hangar, puis les portes d'acier qui donnaient sur l'exterieur s'ouvrirent et le géant d'acier sortit de sa tanière. " memoryAdd="EQUIPAGE=10" memoryRemove="" memoryCondition="NB_MISSIONS=0" nextNodes="Départ tank" unique="false" variable="EQUIPAGE" />
+  <pathChosen id="Nom planète partie 2" />
+  <pathChosen id="Nom planète partie 3" />
+  <pathChosen id="Intro planète" />
+  <pathChosen id="Intro Silo" />
+  <pathChosen id="Nom silo partie 1" />
+  <pathChosen id="Nom silo partie 2" />
+  <pathChosen id="Nom silo partie 3" />
+  <pathChosen id="Intro Silo suite 1" />
+  <pathChosen id="Rat" />
+  <pathChosen id="Rat déplacement" />
+  <pathChosen id="Rat hangar" />
+  <pathChosen id="Intro tank" />
+  <pathChosen id="Départ tank" />
+  <pathChosen id="Nommer tank" />
+  <pathChosen id="Paysage" />
+  <pathChosen id="Commandant tourelle" />
+  <pathChosen id="Avancer tank" />
+  <pathChosen id="Avancer tank encore" />
+  <pathChosen id="Distance tank" />
+  <pathChosen id="Evènement" />
+  <pathChosen id="Nommer tank" />
+  <pathChosen id="Paysage" />
+  <pathChosen id="Commandant tourelle" />
+  <pathChosen id="Avancer tank" />
+  <pathChosen id="Avancer tank encore" />
+  <pathChosen id="Distance tank" />
+  <pathChosen id="Evènement" />
+  <pathChosen id="Nommer tank" />
+  <pathChosen id="Paysage" />
+  <pathChosen id="Commandant tourelle" />
+  <pathChosen id="Avancer tank" />
+  <pathChosen id="Avancer tank encore" />
+  <pathChosen id="Distance tank" />
+  <pathChosen id="Evènement" />
+  <pathChosen id="Nommer tank" />
+  <pathChosen id="Paysage" />
+  <pathChosen id="Commandant tourelle" />
+  <pathChosen id="Avancer tank" />
+  <pathChosen id="Avancer tank encore" />
+  <pathChosen id="Distance tank" />
+  <pathChosen id="Evènement" />
+  <pathChosen id="Nommer tank" />
+  <pathChosen id="Paysage" />
+  <pathChosen id="Commandant tourelle" />
+  <pathChosen id="Avancer tank" />
+  <pathChosen id="Avancer tank encore" />
+  <pathChosen id="Distance tank" />
+  <pathChosen id="Evènement" />
+  <pathChosen id="Nommer tank" />
+  <pathChosen id="Paysage" />
+  <pathChosen id="Météo" />
+  <pathChosen id="Commandant tourelle" />
+  <pathChosen id="Avancer tank" />
+  <pathChosen id="Avancer tank encore" />
+  <pathChosen id="Distance tank" />
+  <pathChosen id="Evènement" />
+  <pathChosen id="Nommer tank" />
+  <pathChosen id="Paysage" />
+  <pathChosen id="Commandant tourelle" />
+  <pathChosen id="Avancer tank" />
+  <pathChosen id="Avancer tank encore" />
+  <pathChosen id="Distance tank" />
+  <pathChosen id="Evènement" />
+  <pathChosen id="Nommer tank" />
+  <pathChosen id="Paysage" />
+  <pathChosen id="Commandant tourelle" />
+  <pathChosen id="Avancer tank" />
+  <pathChosen id="Avancer tank encore" />
+  <pathChosen id="Distance tank" />
+  <pathChosen id="Evènement" />
+  <pathChosen id="Nommer tank" />
+  <pathChosen id="Paysage" />
+  <pathChosen id="Commandant tourelle" />
+  <pathChosen id="Avancer tank" />
+  <pathChosen id="Avancer tank encore" />
+  <pathChosen id="Distance tank" />
+  <pathChosen id="Evènement" />
+  <pathChosen id="Nommer tank" />
+  <pathChosen id="Paysage" />
+  <pathChosen id="Commandant tourelle" />
+  <pathChosen id="Avancer tank" />
+  <pathChosen id="Avancer tank encore" />
+  <pathChosen id="Distance tank proche arrivée" />
+  <pathChosen id="Objectif atteint" />
+  <pathChosen id="Nommer tank" />
+  <pathChosen id="Paysage" />
+  <pathChosen id="Commandant tourelle" />
+  <pathChosen id="Avancer tank" />
+  <pathChosen id="Retour base tank" />
+  <pathChosen id="Récompense" />
+  <pathChosen id="Médailles" />
+  <pathChosen id="Repos" />
+  <pathChosen id="Rat sortie tank" />
+  <pathChosen id="Rat déplacement" />
+  <pathChosen id="Rat hangar" />
+  <pathChosen id="Hangar" />
+  <pathChosen id="Départ tank" />
+  <pathChosen id="Nommer tank" />
+  <pathChosen id="Paysage" />
+</story>
